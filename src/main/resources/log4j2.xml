@@ -39,11 +39,11 @@
 	</Appenders>
 	<Loggers>
 		<!-- 级别依次为【从高到低】：FATAL > ERROR > WARN > INFO > DEBUG > TRACE FEWIDT -->
-		<logger name="com.byb.www" level="DEBUG">
+		<logger name="top.tst" level="DEBUG">
+			<AppenderRef ref="Console" /> <!--全局拦截器 会拦截上边logger配置的输出 -->
+			<AppenderRef ref="RollingFileInfo" /><!--全局拦截器 会拦截上边logger配置的输出 -->
 		</logger>
 		<Root level="debug"><!--root层级 -->
-		<AppenderRef ref="Console" /> <!--全局拦截器 会拦截上边logger配置的输出 -->
-			<AppenderRef ref="RollingFileInfo" /><!--全局拦截器 会拦截上边logger配置的输出 -->
 		</Root>
 	</Loggers>
 </Configuration>
