@@ -223,6 +223,12 @@
 			<version>3.3.1</version>
 		</dependency>
 
+		<!-- webSocket整合 -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-websocket</artifactId>
+		</dependency>
+
 	</dependencies>
 
 	<profiles>

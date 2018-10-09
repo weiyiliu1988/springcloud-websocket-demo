@@ -1,4 +1,4 @@
-package top.tst.websocket.app;
+package top.tst;
 
 import java.util.Arrays;
 
