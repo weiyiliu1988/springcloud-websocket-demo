@@ -120,7 +120,7 @@ public class MyHandler implements WebSocketHandler {
 
 	@Override
 	public void afterConnectionClosed(WebSocketSession session, CloseStatus closeStatus) throws Exception {
-		Integer clientId = (Integer) session.getAttributes().get("WEBSKT_USRID");
+		String clientId = session.getAttributes().get("WEBSKT_USRID").toString();
 		logger.debug("==========~~~~~~~~~~~~~~~~~==============>{}", clientId);
 		users.remove(getClientId(session));
 		logger.debug("关闭连接 移除session==============>>>>>>>>>>>{}", session.getId());
