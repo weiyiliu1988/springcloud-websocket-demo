@@ -34,6 +34,7 @@ public class WebSocketInterceptor implements HandshakeInterceptor {
 			logger.debug("当前session的ID===========>{}", ID);
 			ServletServerHttpRequest httpRequest = (ServletServerHttpRequest) request;
 			HttpSession session = httpRequest.getServletRequest().getSession();
+			// 实质无用 session.getId
 			logger.debug("getSession的ID==========>{}", session.getId());
 			logger.debug("getSession的ID==========>{}", session.getId());
 			logger.debug("getSession的ID==========>{}", session.getId());

@@ -122,8 +122,9 @@ public class MyHandler implements WebSocketHandler {
 	public void afterConnectionClosed(WebSocketSession session, CloseStatus closeStatus) throws Exception {
 		String clientId = session.getAttributes().get("WEBSKT_USRID").toString();
 		logger.debug("==========~~~~~~~~~~~~~~~~~==============>{}", clientId);
+		logger.debug("==========~~~~~~~~~~~~~~~~~-------------->{}", session.getId());
 		users.remove(getClientId(session));
-		logger.debug("关闭连接 移除session==============>>>>>>>>>>>{}", session.getId());
+		logger.debug("关闭连接 移除session==============>>>>>>>>>>>{}", clientId);
 	}
 
 	@Override
