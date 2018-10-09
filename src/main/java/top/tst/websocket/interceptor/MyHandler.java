@@ -35,7 +35,7 @@ public class MyHandler implements WebSocketHandler {
 			logger.debug(ID);
 			System.out.println("~~~~~~~~~~~~~~~~~~===>" + session);
 		}
-		System.out.println("当前在线人数：" + users.size());
+		logger.debug("当前在线人数:{}", users.size());
 
 	}
 
@@ -103,8 +103,10 @@ public class MyHandler implements WebSocketHandler {
 		if (session.isOpen()) {
 			session.close();
 		}
+		String clientId = session.getAttributes().get("WEBSKT_USRID").toString();
 		System.out.println("连接出错");
-		users.remove(getClientId(session));
+		users.remove(clientId);
+		logger.debug("当前在线人数:{}", users.size());
 
 	}
 
@@ -123,8 +125,9 @@ public class MyHandler implements WebSocketHandler {
 		String clientId = session.getAttributes().get("WEBSKT_USRID").toString();
 		logger.debug("==========~~~~~~~~~~~~~~~~~==============>{}", clientId);
 		logger.debug("==========~~~~~~~~~~~~~~~~~-------------->{}", session.getId());
-		users.remove(getClientId(session));
+		users.remove(clientId);
 		logger.debug("关闭连接 移除session==============>>>>>>>>>>>{}", clientId);
+		logger.debug("当前在线人数:{}", users.size());
 	}
 
 	@Override
