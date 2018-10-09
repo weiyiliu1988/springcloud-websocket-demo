@@ -16,9 +16,9 @@
 		<!-- 这个会打印出所有的info及以下级别的信息，每次大小超过size，则这size大小的日志会自动存入按年份-月份建立的文件夹下面并进行压缩，作为存档 -->
 
 		<RollingFile name="RollingFileInfo"
-			fileName="/var/log/byb/virtual-wallet/virtual-wallet.log"
+			fileName="/var/log/websocket/websocket.log"
 
-			filePattern="/var/log/byb/virtual-wallet/$${date:yyyy-MM}/virtual-wallet-%d{yyyy-MM-dd}-%i.log">
+			filePattern="/var/log/websocket/$${date:yyyy-MM}/websocket-%d{yyyy-MM-dd}-%i.log">
 
 			<!--控制台只输出level及以上级别的信息（onMatch），其他的直接拒绝（onMismatch） -->
 
